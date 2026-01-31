@@ -4,7 +4,6 @@ using UnityEngine;
 using TMPro;
 using Object = UnityEngine.Object;
 
-
 public class TypeWriter : MonoBehaviour
 {
     private TMP_Text _textBox;
@@ -49,11 +48,11 @@ public class TypeWriter : MonoBehaviour
     #region Skipfunctionality
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1))
-        {
-            if (_textBox.maxVisibleCharacters != _textBox.textInfo.characterCount - 1)
-                Skip();
-        }
+        //if ()
+        //{
+        //    if (_textBox.maxVisibleCharacters != _textBox.textInfo.characterCount - 1)
+        //        Skip();
+        //}
     }
     // Example for how to implement it in the New Input system
     // You'd have to use a PlayerController component on this gameobject and write the function's name as On[Input Action name] for this to work.
