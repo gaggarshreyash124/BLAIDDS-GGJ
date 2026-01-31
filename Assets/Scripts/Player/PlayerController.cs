@@ -80,9 +80,6 @@ public class PlayerController : MonoBehaviour
         rb.linearVelocityX = inputHandler.movement.x * playerdata.movespeed;
         
     }
-
-
-    
     public void Flip()
     {
         if (isFacingRight && inputHandler.movement.x < 0f || !isFacingRight && inputHandler.movement.x > 0f)
@@ -93,7 +90,6 @@ public class PlayerController : MonoBehaviour
             transform.localScale = localScale;
         }
     }
-
     public void jump()
     {
         if(isDashing)
