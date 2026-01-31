@@ -10,6 +10,7 @@ public class InputHandler : MonoBehaviour
     public bool jumpPressed;
     public float JumpPressedTime;
     public bool dashPressed;
+    public bool attackPressed;
 
     private void Awake()
     {
@@ -66,6 +67,22 @@ public class InputHandler : MonoBehaviour
         else if (context.canceled)
         {
             dashPressed = false;
+        }
+    }
+
+    public void onAttackInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            attackPressed = true;
+        }
+        else if (context.performed)
+        {
+            attackPressed = false;
+        }
+        else if(context.canceled)
+        {
+            attackPressed = false;
         }
     }
 }
