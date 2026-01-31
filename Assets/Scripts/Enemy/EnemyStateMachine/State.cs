@@ -28,7 +28,7 @@ public class State
     }
     public virtual void LogicUpdate()
     {
-
+        Debug.Log("State Logic Update");
     }
     public virtual void PhysicsUpdate()
     {

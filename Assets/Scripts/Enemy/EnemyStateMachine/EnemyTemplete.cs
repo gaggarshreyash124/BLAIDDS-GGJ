@@ -25,6 +25,7 @@ public class EnemyTemplete : MonoBehaviour
     public virtual void Update()
     {
         stateMachine.CurrentState.LogicUpdate();
+
     }
     public virtual void FixedUpdate()
     {
@@ -55,11 +56,11 @@ public class EnemyTemplete : MonoBehaviour
 
     public virtual bool CheckPlayerInMinAgroRange()
     {
-        return Physics2D.Raycast(PlayerCheck.transform.position, transform.right, enemyData.minAgroDistance, enemyData.Player);
+        return Physics2D.Raycast(transform.position, transform.right, enemyData.minAgroDistance, enemyData.Player);
     }
 
     public virtual bool CheckPlayerInMaxAgroRange()
     {
-        return Physics2D.Raycast(PlayerCheck.transform.position, transform.right, enemyData.maxAgroDistance, enemyData.Player);
+        return Physics2D.Raycast(transform.position, transform.right, enemyData.maxAgroDistance, enemyData.Player);
     }
 }
