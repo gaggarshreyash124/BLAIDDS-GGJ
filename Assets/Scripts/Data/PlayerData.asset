@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9f543a5a660d614fb8e178574025f73, type: 3}
+  m_Name: PlayerData
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerData
+  movespeed: 15
+  jumpforce: 30
+  maxJumps: 2
+  jumpsRemaining: 2
+  isGrounded: 1
+  coyotecheck: 71.239975
+  cancoyote: 1
+  CoyoteTime: 0.15
+  dashForce: 10
+  dashDuration: 0.2
+  dashCooldown: 0.5
+  Attack: 10
+  maxHealth: 100
+  currentHealth: 0
