@@ -161,6 +161,4 @@ public class PlayerController : MonoBehaviour
     {
         transform.position = respawnHandler.CurrentRespawnCords;
     }
-
-
 }
