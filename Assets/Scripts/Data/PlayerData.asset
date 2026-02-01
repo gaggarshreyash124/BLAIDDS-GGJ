@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f543a5a660d614fb8e178574025f73, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: Assembly-CSharp::PlayerData
-  movespeed: 15
-  jumpforce: 30
+  movespeed: 12
+  jumpforce: 15
   maxJumps: 2
   jumpsRemaining: 2
   isGrounded: 1
-  coyotecheck: 71.239975
+  coyotecheck: 36.359985
   cancoyote: 1
   CoyoteTime: 0.15
   dashForce: 10
