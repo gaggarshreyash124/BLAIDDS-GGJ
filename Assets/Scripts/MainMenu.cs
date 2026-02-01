@@ -1,16 +1,19 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Animator Anim;
+    public void onPlay()
     {
-        
+        SceneManager.LoadScene(1);
     }
-
-    // Update is called once per frame
-    void Update()
+    public void Play()
     {
-        
+        Anim.SetTrigger("Play");
+    }
+    public void OnApplicationQuit()
+    {
+        Application.Quit();
     }
 }
