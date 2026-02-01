@@ -31,6 +31,13 @@ public class PlayerController : MonoBehaviour
 
     // Coyote jump
     bool CanUseCoyote => playerdata.cancoyote && !playerdata.isGrounded && Time.time < playerdata.coyotecheck + playerdata.CoyoteTime;
+
+    //Maks Collected
+    public Transform MaskPosition;
+    public Transform Mask;
+    public bool HasDJumpMask;
+    public bool HasDashMask;
+
     bool GroundHit()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
@@ -45,7 +52,7 @@ public class PlayerController : MonoBehaviour
     {  
         move();
         Flip();
-        if(inputHandler.dashPressed && canDash)
+        if(inputHandler.dashPressed && canDash && HasDashMask)
         {
             StartCoroutine(Dash());
         }
@@ -69,18 +76,14 @@ public class PlayerController : MonoBehaviour
             playerdata.coyotecheck = Time.time;
         }
     }
-
     public void move()
     {
         if(isDashing)
         {
             return;
         }
-
-        rb.linearVelocityX = inputHandler.movement.x * playerdata.movespeed;
-        
+        rb.linearVelocityX = inputHandler.movement.x * playerdata.movespeed;   
     }
-
 
     
     public void Flip()
@@ -101,6 +104,15 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
+        if (HasDJumpMask)
+        {
+            playerdata.maxJumps = 2;
+        }
+        else
+        {
+            playerdata.maxJumps = 1;
+        }
+
         if(inputHandler.jumpPressed && playerdata.jumpsRemaining>0)
         {
             Anim.SetTrigger("Jump");
@@ -111,8 +123,6 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-
-
 #region Attack, Damage
     public void TakeDamage(float damage)
     {
@@ -161,6 +171,5 @@ public class PlayerController : MonoBehaviour
     {
         transform.position = respawnHandler.CurrentRespawnCords;
     }
-
 
 }

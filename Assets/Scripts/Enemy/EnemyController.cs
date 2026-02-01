@@ -31,6 +31,7 @@ public class EnemyController : MonoBehaviour
     float Counter;
     public float ChaseSpeed = 4f;
 
+
     public bool IsOnLedge()
     {
         return !Physics2D.OverlapCircle(LedgeCheck.position, 0.1f, GroundLayer);
