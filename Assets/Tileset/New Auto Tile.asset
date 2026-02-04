@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b08ceb78e3b2495b8d808a5860e66794, type: 3}
+  m_Name: New Auto Tile
+  m_EditorClassIdentifier: Unity.2D.Tilemap.Extras::UnityEngine.Tilemaps.AutoTile
+  m_DefaultSprite: {fileID: -7133230849722980620, guid: 56ceb0123faf27a49ae1d50df98f513c, type: 3}
+  m_DefaultGameObject: {fileID: 0}
+  m_DefaultColliderType: 1
+  m_MaskType: 1
+  m_Random: 0
+  m_PhysicsShapeCheck: 0
+  m_AutoTileDictionary:
+    keyData: 
+    valueData: []
+  m_TextureList:
+  - {fileID: 2800000, guid: 01ea5fb8635c5014099d7f245f64c569, type: 3}
+  - {fileID: 2800000, guid: 56ceb0123faf27a49ae1d50df98f513c, type: 3}
+  - {fileID: 2800000, guid: b2a7b10e4fa7eb24ab707fb0bebf2af5, type: 3}
+  - {fileID: 2800000, guid: 00267f3f9be9db740890145398f07749, type: 3}
+  - {fileID: 2800000, guid: 179634f0c611fd842b63a795c8c07ec0, type: 3}
+  - {fileID: 2800000, guid: b03758a2bbc293542802eef2be7bc499, type: 3}
+  - {fileID: 2800000, guid: 23af091099bddc24f806e7ccaa470710, type: 3}
+  - {fileID: 2800000, guid: 3bcf80f262c0ecf4094545fe64531ae8, type: 3}
+  - {fileID: 2800000, guid: 45d896e25e8514844a745b2545994751, type: 3}
+  m_TextureScaleList:
+  - 1.048
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1

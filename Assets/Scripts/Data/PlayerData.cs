@@ -27,6 +27,8 @@ public class PlayerData : ScriptableObject
     [Header("Health and Attack")]
     [Space]
     public float Attack = 10f;
-    public float maxHealth =100f;
+    public int maxHealth =10;
     public float currentHealth;
+
+    public bool Dead;
 }
