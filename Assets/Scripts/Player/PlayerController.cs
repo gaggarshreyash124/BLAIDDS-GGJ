@@ -1,8 +1,4 @@
 using System.Collections;
-using System.Runtime.CompilerServices;
-using NUnit.Framework;
-using Unity.VisualScripting;
-using UnityEditor.Callbacks;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -47,6 +43,11 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         inputHandler = GetComponent<InputHandler>();
     }
+    public void Start()
+    {
+        playerdata.currentHealth = playerdata.maxHealth;
+        playerdata.Dead = false;
+    }
 
     private void Update()
     {  
@@ -57,7 +58,7 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(Dash());
         }
         Anim.SetBool("Run",inputHandler.movement.x !=0);
-        Anim.SetBool("Inair",!playerdata.isGrounded);
+        Anim.SetBool("Inair", !playerdata.isGrounded);
     }
 
     private void FixedUpdate()
@@ -96,6 +97,28 @@ public class PlayerController : MonoBehaviour
             transform.localScale = localScale;
         }
     }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Death"))
+        {
+            TakeDamage(20f);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Mask1"))
+        {
+            HasDJumpMask = true;
+            Destroy(collision.gameObject);
+            
+        }
+        if (collision.gameObject.CompareTag("Mask2"))
+        {
+            HasDashMask = true;
+            Destroy(collision.gameObject);
+        }
+    }
 
     public void jump()
     {
@@ -129,7 +152,8 @@ public class PlayerController : MonoBehaviour
         playerdata.currentHealth -= damage;
         if(playerdata.currentHealth <= 0)
         {
-            Destroy(gameObject);
+            playerdata.Dead = true;
+            Destroy(gameObject,0.15f);
         }
     }
 
